@@ -3,6 +3,8 @@ import React from 'react'
 import App from "../App";
 import Home from "../components/pages/Home";
 import Protect from "./Protect";
+import Login from "../components/Login";
+import Register from "../components/Register";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,7 +23,11 @@ const appRouter = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <Home />
+    element: <Login />
+  },
+  {
+    path: '/signup',
+    element: <Register />
   },
 
 ])

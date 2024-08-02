@@ -12,7 +12,7 @@ import appRouter from './routes/routes.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Toaster richColors position="bottom-right" />
+      <Toaster richColors position="top-right" />
         <PersistGate loading={null} persistor={persistor} >
           <RouterProvider router={appRouter}>
             <App />

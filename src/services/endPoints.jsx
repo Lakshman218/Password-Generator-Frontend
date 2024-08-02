@@ -1,4 +1,7 @@
 export const userUrls = {
   login: "/login",
-  register: "/register",
+  register: "/signup",
+  savePassword: "/savePassword",
+  getPassword: "/getPassword",
+  deletePassword: "/deletePassword",
 }
