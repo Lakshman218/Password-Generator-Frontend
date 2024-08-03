@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllPassword, deletePassword } from '../../services/user/apiMethod'; // Make sure to implement deletePassword in your API methods
 import { useSelector } from 'react-redux';
-import { Trash } from 'lucide-react'; // Import delete icon from lucide-react or any other icon library
+import { Copy, Trash } from 'lucide-react'; // Import delete icon from lucide-react or any other icon library
 
 function SavedPasswords() {
   const selectUser = (state) => state.auth.user;
@@ -42,17 +42,20 @@ function SavedPasswords() {
             ) : (
               <ul className="space-y-4">
                 {passwords.map((password) => (
-                  <li key={password._id} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md">
+                  <li key={password._id} className="flex items-center justify-between p-4 bg-neutral-200 rounded-lg shadow-md">
                     <div>
                       <p className="font-semibold">{password.title}</p>
-                      <p className="text-gray-600">{password.password}</p>
+                      <p className="text-gray-800">{password.password}</p>
                     </div>
+                    <div className='flex justify-center text-center'>
+                    <button><Copy className='text-blue-800 hover:text-blue-900'/> </button>
                     <button
                       onClick={() => handleDelete(password._id)}
-                      className="text-red-600 hover:text-red-800"
+                      className="text-red-600 hover:text-red-800 pl-4"
                     >
                       <Trash size={20} />
                     </button>
+                    </div>
                   </li>
                 ))}
               </ul>

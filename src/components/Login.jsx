@@ -53,7 +53,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center min-h-screen bg-neutral-200">
       <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
         <p className="text-center mb-4 text-gray-600">Create and manage all your passwords securely.</p>

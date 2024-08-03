@@ -50,7 +50,7 @@ function PasswordGenerator() {
               </button>
             </div>
           ) : 
-          <div className='w-6/12 bg-gray-300 justify-center flex py-4 px-4 mt-2 rounded-md'>
+          <div className='w-6/12 bg-neutral-200 justify-center flex py-4 px-4 mt-2 rounded-md'>
             <div className='flex px-4 py-2'>
               <p className='text-gray-800 flex items-center text-lg'>Create and manage all your passwords securely.</p>
             </div>
@@ -97,7 +97,7 @@ function PasswordGenerator() {
               <button
                 // onClick={() => {handleSave()}} 
                 onClick={handleShowModal}
-                className='px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-300 font-semibold'>Save Password</button>
+                className='px-4 py-2 bg-white text-black rounded-lg hover:bg-neutral-200 font-semibold'>Save Password</button>
             </div>
           )}
 
