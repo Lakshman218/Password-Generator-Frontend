@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllPassword, deletePassword } from '../../services/user/apiMethod'; // Make sure to implement deletePassword in your API methods
 import { useSelector } from 'react-redux';
 import { Copy, Trash } from 'lucide-react'; // Import delete icon from lucide-react or any other icon library
+import { toast } from 'sonner';
 
 function SavedPasswords() {
   const selectUser = (state) => state.auth.user;
@@ -31,6 +32,11 @@ function SavedPasswords() {
     }
   };
 
+  const handleCopy = (password) => {
+    navigator.clipboard.writeText(password)
+    toast.success("Text Copied")
+  }
+
   return (
     <div className='w-full'>
       <div className='flex flex-col items-center gap-8'>
@@ -48,7 +54,9 @@ function SavedPasswords() {
                       <p className="text-gray-800">{password.password}</p>
                     </div>
                     <div className='flex justify-center text-center'>
-                    <button><Copy className='text-blue-800 hover:text-blue-900'/> </button>
+                    <button
+                    onClick={() => {handleCopy(password.password)}}
+                    ><Copy className='text-blue-800 hover:text-blue-900'/> </button>
                     <button
                       onClick={() => handleDelete(password._id)}
                       className="text-red-600 hover:text-red-800 pl-4"

@@ -41,6 +41,7 @@ function Register() {
         const data = response.data
         if(response.status === 200) {
           toast.success(data.message)
+          navigate('/login')
         } else {
           toast.error(data.message)
         }
